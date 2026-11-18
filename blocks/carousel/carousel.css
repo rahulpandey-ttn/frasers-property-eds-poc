@@ -23,7 +23,7 @@
     margin: 48px;
     padding: 24px 32px;
     color: #fff;
-    background-color: rgb(18, 35, 58);
+    background-color: rgb(18 35 58);
     max-width: 580px;
   }
   
@@ -51,7 +51,7 @@
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background: rgb(18, 35, 58) !important;
+    background: rgb(18 35 58) !important;
     color: #fff !important;
     font-size: 28px !important;
     line-height: 1 !important;
@@ -59,7 +59,7 @@
   
   .carousel .owl-nav button.owl-prev:hover,
   .carousel .owl-nav button.owl-next:hover {
-    background: rgb(18, 35, 58) !important;
+    background: rgb(18 35 58) !important;
   }
   
   /* Style Owl dots */
