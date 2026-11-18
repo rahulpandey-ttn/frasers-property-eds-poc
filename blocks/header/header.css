@@ -338,6 +338,13 @@ header .nav-wrapper {
     max-width: 1320px;
     margin: 0 auto;
     padding: 0 32px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  header nav .nav-sections .default-content-wrapper {
+    display: flex;
+    justify-content: space-evenly;
   }
 
   header nav .nav-tools ul {
