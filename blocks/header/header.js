@@ -140,6 +140,37 @@ export default async function decorate(block) {
     });
   }
 
+  // nav tools
+  const navTools = nav.querySelector('.nav-tools');
+  if (navTools) {
+    // dropdowns in the gray bar (Our global group, REITs, Careers)
+    navTools.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((toolItem) => {
+      if (toolItem.querySelector('ul')) {
+        toolItem.classList.add('nav-drop');
+        toolItem.addEventListener('click', (e) => {
+          if (isDesktop.matches) {
+            e.stopPropagation();
+            const expanded = toolItem.getAttribute('aria-expanded') === 'true';
+            navTools.querySelectorAll('.nav-drop').forEach((el) => {
+              el.setAttribute('aria-expanded', 'false');
+            });
+            toolItem.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+          }
+        });
+      }
+    });
+
+    // move the search icon from the gray bar into the main bar
+    const searchItem = navTools.querySelector('.icon-search')?.closest('li');
+    if (searchItem) {
+      const mainSearchWrapper = document.createElement('div');
+      mainSearchWrapper.className = 'nav-search';
+      mainSearchWrapper.append(searchItem.cloneNode(true));
+      searchItem.remove();
+      nav.append(mainSearchWrapper);
+    }
+  }
+
   // hamburger for mobile
   const hamburger = document.createElement('div');
   hamburger.classList.add('nav-hamburger');
