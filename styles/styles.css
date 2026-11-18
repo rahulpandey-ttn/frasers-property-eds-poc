@@ -323,3 +323,13 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+
+main .section.carousel-container {
+  margin: 0;
+  padding: 0;
+}
+
+main .section.carousel-container > div {
+  max-width: unset;
+  padding: 0;
+}
